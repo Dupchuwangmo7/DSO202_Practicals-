@@ -1,0 +1,23 @@
+NAME                                  READY   STATUS    RESTARTS        AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+pod/web-deployment-76ddf5fcf9-szxd8   1/1     Running   1 (9m43s ago)   21h   10.244.2.4   worker-node-1   <none>           <none>
+pod/web-deployment-76ddf5fcf9-v9fqc   1/1     Running   1 (9m43s ago)   21h   10.244.2.2   worker-node-1   <none>           <none>
+pod/web-deployment-76ddf5fcf9-wndb5   1/1     Running   1 (9m43s ago)   21h   10.244.1.2   worker-node-2   <none>           <none>
+
+NAME                    TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/web-clusterip   ClusterIP   10.96.150.81   <none>        80/TCP    20h   app=web,tier=frontend
+
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/web-deployment   3/3     3            3           21h   web          nginx:1.30-alpine   app=web,tier=frontend
+
+NAME                                        DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES                      SELECTOR
+replicaset.apps/web-deployment-67499b7844   0         0         0       20h   web          nginx:9.99-does-not-exist   app=web,pod-template-hash=67499b7844,tier=frontend
+replicaset.apps/web-deployment-76ddf5fcf9   3         3         3       21h   web          nginx:1.30-alpine           app=web,pod-template-hash=76ddf5fcf9,tier=frontend
+replicaset.apps/web-deployment-ddd46bfd     0         0         0       21h   web          nginx:1.31-alpine           app=web,pod-template-hash=ddd46bfd,tier=frontend
+NAME                         REQUEST                                                                                                                          LIMIT                                          AGE
+resourcequota/dso202-quota   count/configmaps: 1/10, count/secrets: 0/10, count/services: 1/5, pods: 3/20, requests.cpu: 150m/2, requests.memory: 192Mi/2Gi   limits.cpu: 600m/4, limits.memory: 384Mi/4Gi   21h
+
+NAME                       CREATED AT
+limitrange/dso202-limits   2026-08-19T16:46:01Z
+
+NAME                                                 ADDRESSTYPE   PORTS   ENDPOINTS                          AGE
+endpointslice.discovery.k8s.io/web-clusterip-gv556   IPv4          80      10.244.1.2,10.244.2.2,10.244.2.4   20h

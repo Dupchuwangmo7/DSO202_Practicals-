@@ -1,0 +1,76 @@
+LAST SEEN   TYPE      REASON              OBJECT                                 MESSAGE
+21h         Normal    Scheduled           pod/web-deployment-76ddf5fcf9-szxd8    Successfully assigned dso202-practical-01/web-deployment-76ddf5fcf9-szxd8 to worker-node-1
+21h         Normal    Scheduled           pod/web-imperative                     Successfully assigned dso202-practical-01/web-imperative to worker-node-1
+21h         Normal    Scheduled           pod/web-deployment-76ddf5fcf9-l8bb4    Successfully assigned dso202-practical-01/web-deployment-76ddf5fcf9-l8bb4 to worker-node-2
+20h         Normal    Scheduled           pod/web-deployment-67499b7844-d5s86    Successfully assigned dso202-practical-01/web-deployment-67499b7844-d5s86 to worker-node-2
+21h         Normal    Scheduled           pod/web-deployment-76ddf5fcf9-v9fqc    Successfully assigned dso202-practical-01/web-deployment-76ddf5fcf9-v9fqc to worker-node-1
+21h         Normal    Scheduled           pod/web-deployment-76ddf5fcf9-rrnsg    Successfully assigned dso202-practical-01/web-deployment-76ddf5fcf9-rrnsg to worker-node-2
+21h         Normal    Scheduled           pod/web-deployment-76ddf5fcf9-wndb5    Successfully assigned dso202-practical-01/web-deployment-76ddf5fcf9-wndb5 to worker-node-2
+21h         Normal    Scheduled           pod/web-deployment-76ddf5fcf9-ngwfc    Successfully assigned dso202-practical-01/web-deployment-76ddf5fcf9-ngwfc to worker-node-2
+21h         Normal    Scheduled           pod/web-deployment-ddd46bfd-tkzbg      Successfully assigned dso202-practical-01/web-deployment-ddd46bfd-tkzbg to worker-node-2
+21h         Normal    Started             pod/web-imperative                     Container started
+21h         Normal    Created             pod/web-imperative                     Container created
+21h         Normal    Pulled              pod/web-imperative                     Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+21h         Normal    Killing             pod/web-imperative                     Stopping container web-imperative
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-76ddf5fcf9   Created pod: web-deployment-76ddf5fcf9-v9fqc
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-76ddf5fcf9   Created pod: web-deployment-76ddf5fcf9-wndb5
+21h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled up replica set web-deployment-76ddf5fcf9 from 0 to 3
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-76ddf5fcf9   Created pod: web-deployment-76ddf5fcf9-rrnsg
+21h         Normal    Pulling             pod/web-deployment-76ddf5fcf9-rrnsg    Pulling image "nginx:1.30-alpine"
+21h         Normal    Started             pod/web-deployment-76ddf5fcf9-v9fqc    Container started
+21h         Normal    Created             pod/web-deployment-76ddf5fcf9-v9fqc    Container created
+21h         Normal    Pulled              pod/web-deployment-76ddf5fcf9-v9fqc    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+21h         Normal    Pulling             pod/web-deployment-76ddf5fcf9-wndb5    Pulling image "nginx:1.30-alpine"
+21h         Normal    Started             pod/web-deployment-76ddf5fcf9-wndb5    Container started
+21h         Normal    Pulled              pod/web-deployment-76ddf5fcf9-wndb5    Successfully pulled image "nginx:1.30-alpine" in 7m26.56s (7m26.56s including waiting). Image size: 25956490 bytes.
+21h         Normal    Created             pod/web-deployment-76ddf5fcf9-wndb5    Container created
+21h         Normal    Started             pod/web-deployment-76ddf5fcf9-rrnsg    Container started
+21h         Normal    Pulled              pod/web-deployment-76ddf5fcf9-rrnsg    Successfully pulled image "nginx:1.30-alpine" in 7.532s (7m34.086s including waiting). Image size: 25956490 bytes.
+21h         Normal    Created             pod/web-deployment-76ddf5fcf9-rrnsg    Container created
+21h         Normal    Pulled              pod/web-deployment-76ddf5fcf9-ngwfc    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+21h         Normal    Created             pod/web-deployment-76ddf5fcf9-ngwfc    Container created
+21h         Normal    Started             pod/web-deployment-76ddf5fcf9-ngwfc    Container started
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-76ddf5fcf9   Created pod: web-deployment-76ddf5fcf9-ngwfc
+21h         Normal    Killing             pod/web-deployment-76ddf5fcf9-rrnsg    Stopping container web
+21h         Normal    Pulled              pod/web-deployment-76ddf5fcf9-szxd8    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+21h         Normal    Started             pod/web-deployment-76ddf5fcf9-szxd8    Container started
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-76ddf5fcf9   Created pod: web-deployment-76ddf5fcf9-szxd8
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-76ddf5fcf9   Created pod: web-deployment-76ddf5fcf9-l8bb4
+21h         Normal    Created             pod/web-deployment-76ddf5fcf9-szxd8    Container created
+21h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled up replica set web-deployment-76ddf5fcf9 from 3 to 5
+21h         Normal    Started             pod/web-deployment-76ddf5fcf9-l8bb4    Container started
+21h         Normal    Created             pod/web-deployment-76ddf5fcf9-l8bb4    Container created
+21h         Normal    Pulled              pod/web-deployment-76ddf5fcf9-l8bb4    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+21h         Normal    SuccessfulDelete    replicaset/web-deployment-76ddf5fcf9   Deleted pod: web-deployment-76ddf5fcf9-ngwfc
+21h         Normal    SuccessfulDelete    replicaset/web-deployment-76ddf5fcf9   Deleted pod: web-deployment-76ddf5fcf9-l8bb4
+21h         Normal    Killing             pod/web-deployment-76ddf5fcf9-ngwfc    Stopping container web
+21h         Normal    Killing             pod/web-deployment-76ddf5fcf9-l8bb4    Stopping container web
+21h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled down replica set web-deployment-76ddf5fcf9 from 5 to 3
+21h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled up replica set web-deployment-ddd46bfd from 0 to 1
+21h         Normal    Pulling             pod/web-deployment-ddd46bfd-tkzbg      Pulling image "nginx:1.31-alpine"
+21h         Normal    SuccessfulCreate    replicaset/web-deployment-ddd46bfd     Created pod: web-deployment-ddd46bfd-tkzbg
+20h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled down replica set web-deployment-ddd46bfd from 1 to 0
+20h         Normal    SuccessfulDelete    replicaset/web-deployment-ddd46bfd     Deleted pod: web-deployment-ddd46bfd-tkzbg
+20h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled up replica set web-deployment-67499b7844 from 0 to 1
+20h         Normal    SuccessfulCreate    replicaset/web-deployment-67499b7844   Created pod: web-deployment-67499b7844-d5s86
+20h         Normal    Pulling             pod/web-deployment-67499b7844-d5s86    Pulling image "nginx:9.99-does-not-exist"
+20h         Normal    ScalingReplicaSet   deployment/web-deployment              Scaled down replica set web-deployment-67499b7844 from 1 to 0
+20h         Normal    SuccessfulDelete    replicaset/web-deployment-67499b7844   Deleted pod: web-deployment-67499b7844-d5s86
+20h         Normal    Started             pod/web-deployment-ddd46bfd-tkzbg      Container started
+20h         Normal    Killing             pod/web-deployment-ddd46bfd-tkzbg      Stopping container web
+20h         Normal    Pulled              pod/web-deployment-ddd46bfd-tkzbg      Successfully pulled image "nginx:1.31-alpine" in 10m56.647s (10m56.647s including waiting). Image size: 25971031 bytes.
+20h         Normal    Created             pod/web-deployment-ddd46bfd-tkzbg      Container created
+20h         Warning   Failed              pod/web-deployment-67499b7844-d5s86    Failed to pull image "nginx:9.99-does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:9.99-does-not-exist": failed to resolve reference "docker.io/library/nginx:9.99-does-not-exist": docker.io/library/nginx:9.99-does-not-exist: not found
+20h         Warning   Failed              pod/web-deployment-67499b7844-d5s86    Error: ErrImagePull
+9m38s       Normal    Started             pod/web-deployment-76ddf5fcf9-wndb5    Container started
+9m38s       Normal    SandboxChanged      pod/web-deployment-76ddf5fcf9-wndb5    Pod sandbox changed, it will be killed and re-created.
+9m38s       Normal    Pulled              pod/web-deployment-76ddf5fcf9-wndb5    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+9m38s       Normal    Created             pod/web-deployment-76ddf5fcf9-wndb5    Container created
+9m37s       Normal    SandboxChanged      pod/web-deployment-76ddf5fcf9-szxd8    Pod sandbox changed, it will be killed and re-created.
+9m37s       Normal    SandboxChanged      pod/web-deployment-76ddf5fcf9-v9fqc    Pod sandbox changed, it will be killed and re-created.
+9m36s       Normal    Created             pod/web-deployment-76ddf5fcf9-v9fqc    Container created
+9m36s       Normal    Started             pod/web-deployment-76ddf5fcf9-v9fqc    Container started
+9m36s       Normal    Pulled              pod/web-deployment-76ddf5fcf9-v9fqc    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
+9m36s       Normal    Started             pod/web-deployment-76ddf5fcf9-szxd8    Container started
+9m36s       Normal    Created             pod/web-deployment-76ddf5fcf9-szxd8    Container created
+9m36s       Normal    Pulled              pod/web-deployment-76ddf5fcf9-szxd8    Container image "nginx:1.30-alpine" already present on machine and can be accessed by the pod
