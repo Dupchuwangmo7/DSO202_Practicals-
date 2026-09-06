@@ -1,0 +1,19 @@
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                   STORAGECLASS    VOLUMEATTRIBUTESCLASS   REASON   AGE     VOLUMEMODE
+persistentvolume/pv-web-static                              1Gi        RWO            Retain           Bound    dso202-practical-02/pvc-web-static      manual          <unset>                          52m     Filesystem
+persistentvolume/pvc-236ecf2a-99e2-40af-b61f-ee2340b3ba21   1Gi        RWO            Delete           Bound    dso202-practical-02/content-webnote-2   standard        <unset>                          37m     Filesystem
+persistentvolume/pvc-38897035-b4c9-4558-91ff-fe3b4f45ee5c   1Gi        RWO            Delete           Bound    dso202-practical-02/content-webnote-3   standard        <unset>                          26m     Filesystem
+persistentvolume/pvc-5dfc420a-369f-4c4c-b994-eefa8df1246e   2Gi        RWO            Retain           Bound    dso202-practical-02/data-postgres-0     dso202-retain   <unset>                          9m16s   Filesystem
+persistentvolume/pvc-c27f7300-0f1a-47e4-a33d-5ca972bd4e10   1Gi        RWO            Delete           Bound    dso202-practical-02/content-webnote-0   standard        <unset>                          40m     Filesystem
+persistentvolume/pvc-da635a61-daf4-4c23-9bad-a6a45590f7bb   1Gi        RWO            Delete           Bound    dso202-practical-02/content-webnote-1   standard        <unset>                          38m     Filesystem
+
+NAME                                      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS    VOLUMEATTRIBUTESCLASS   AGE     VOLUMEMODE
+persistentvolumeclaim/content-webnote-0   Bound    pvc-c27f7300-0f1a-47e4-a33d-5ca972bd4e10   1Gi        RWO            standard        <unset>                 40m     Filesystem
+persistentvolumeclaim/content-webnote-1   Bound    pvc-da635a61-daf4-4c23-9bad-a6a45590f7bb   1Gi        RWO            standard        <unset>                 38m     Filesystem
+persistentvolumeclaim/content-webnote-2   Bound    pvc-236ecf2a-99e2-40af-b61f-ee2340b3ba21   1Gi        RWO            standard        <unset>                 37m     Filesystem
+persistentvolumeclaim/content-webnote-3   Bound    pvc-38897035-b4c9-4558-91ff-fe3b4f45ee5c   1Gi        RWO            standard        <unset>                 26m     Filesystem
+persistentvolumeclaim/data-postgres-0     Bound    pvc-5dfc420a-369f-4c4c-b994-eefa8df1246e   2Gi        RWO            dso202-retain   <unset>                 9m19s   Filesystem
+persistentvolumeclaim/pvc-web-static      Bound    pv-web-static                              1Gi        RWO            manual          <unset>                 52m     Filesystem
+
+NAME                                             PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+storageclass.storage.k8s.io/dso202-retain        rancher.io/local-path   Retain          WaitForFirstConsumer   false                  63m
+storageclass.storage.k8s.io/standard (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  67m
