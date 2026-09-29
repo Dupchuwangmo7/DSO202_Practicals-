@@ -1,0 +1,5 @@
+# JSON 6902 patch. "~1" is the JSON Pointer escape for "/" inside the key.
+# Adds ONE key to the existing annotations map instead of replacing the map.
+- op: add
+  path: /metadata/annotations/training.example.com~1owner
+  value: qa-team

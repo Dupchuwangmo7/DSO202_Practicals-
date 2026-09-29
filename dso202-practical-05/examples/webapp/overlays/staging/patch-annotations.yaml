@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  annotations:
+    training.example.com/release-channel: candidate

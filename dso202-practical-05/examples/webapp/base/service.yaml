@@ -1,0 +1,18 @@
+# Base Service - shared by every environment. Port 80 maps to the
+# container port named "http" (8080 on nginx-unprivileged).
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+  labels:
+    app.kubernetes.io/name: webapp
+    app.kubernetes.io/component: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: webapp
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

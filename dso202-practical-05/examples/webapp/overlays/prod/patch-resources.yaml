@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  annotations:
+    training.example.com/release-channel: stable
+spec:
+  template:
+    spec:
+      containers:
+        - name: webapp
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              memory: 128Mi

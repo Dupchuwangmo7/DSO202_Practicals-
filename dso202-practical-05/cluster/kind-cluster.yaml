@@ -1,0 +1,27 @@
+# DSO202 Practical 5 - three-node kind cluster for the Kustomize lab.
+# Node names follow the handout topology (control-plane, worker-node-1,
+# worker-node-2). No port mappings: the app is reached with port-forward.
+#   Create: kind create cluster --config cluster/kind-cluster.yaml
+#   Delete: kind delete cluster --name dso202-p5
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: dso202-p5
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+      - |
+        kind: InitConfiguration
+        nodeRegistration:
+          name: control-plane
+  - role: worker
+    kubeadmConfigPatches:
+      - |
+        kind: JoinConfiguration
+        nodeRegistration:
+          name: worker-node-1
+  - role: worker
+    kubeadmConfigPatches:
+      - |
+        kind: JoinConfiguration
+        nodeRegistration:
+          name: worker-node-2

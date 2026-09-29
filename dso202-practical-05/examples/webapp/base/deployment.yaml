@@ -1,0 +1,80 @@
+# Base Deployment - the only Deployment in the repo. Overlays change it
+# through kustomization fields and patches, never by copying it.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  labels:
+    app.kubernetes.io/name: webapp
+    app.kubernetes.io/component: frontend
+  annotations:
+    training.example.com/managed-by: kustomize
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: webapp
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: webapp
+        app.kubernetes.io/component: frontend
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: webapp
+          # Unprivileged NGINX: runs as non-root and listens on 8080
+          image: nginxinc/nginx-unprivileged:1.25-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: content
+          configMap:
+            name: web-content
+        - name: tmp
+          emptyDir: {}

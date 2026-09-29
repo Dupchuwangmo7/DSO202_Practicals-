@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict PpA1x7AB2mrlOGXrgqzTsC8PJriCtctg2kYjymE7ZXeXRMpyxr36chmsrZ8dUZw
+\restrict zRfinXtr91veQwcLzDSo4i6WK6zhxGcJtMomIJvYDdchU0r0nV5w3aUn8bjbegM
 
 -- Dumped from database version 18.6
 -- Dumped by pg_dump version 18.6
@@ -71,9 +71,9 @@ ALTER TABLE ONLY public.tasks ALTER COLUMN id SET DEFAULT nextval('public.tasks_
 --
 
 COPY public.tasks (id, title, done, created_at) FROM stdin;
-1	Complete Practical 2	f	2026-09-05 18:30:25.234138+00
-2	Read Unit II notes	f	2026-09-05 18:30:25.234138+00
-3	Draft the report	f	2026-09-05 18:30:25.234138+00
+1	Complete Practical 2	f	2026-09-06 16:53:45.957385+00
+2	Read Unit II notes	f	2026-09-06 16:53:45.957385+00
+3	Draft the report	f	2026-09-06 16:53:45.957385+00
 \.
 
 
@@ -96,5 +96,5 @@ ALTER TABLE ONLY public.tasks
 -- PostgreSQL database dump complete
 --
 
-\unrestrict PpA1x7AB2mrlOGXrgqzTsC8PJriCtctg2kYjymE7ZXeXRMpyxr36chmsrZ8dUZw
+\unrestrict zRfinXtr91veQwcLzDSo4i6WK6zhxGcJtMomIJvYDdchU0r0nV5w3aUn8bjbegM
 
